@@ -3,7 +3,13 @@ java_binary(
 	srcs = glob(["**/*.java"]),
 	main_class = "willard379.bazel.sample.SystemPropertiesViewer",
 	deps = ["commons_lang3"],
-	runtime_deps = ["junit", "hamcrest_all"],
+)
+
+java_test(
+	name = "system-properties-viewer",
+	srcs = glob(["src/test/java/**/*.java"]),
+	deps = ["commons_lang3"],
+	runtime_deps = ["junit", "hamcrest_all"], 
 )
 
 java_library(
