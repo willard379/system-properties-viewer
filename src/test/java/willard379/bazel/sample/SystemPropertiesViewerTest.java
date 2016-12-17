@@ -1,9 +1,9 @@
 package willard379.bazel.sample;
 
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.not;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 import java.util.List;
 
@@ -79,5 +79,10 @@ public class SystemPropertiesViewerTest {
 		
 		// verify outcome
 		assertThat(actual, is(not(empty())));
+	}
+	
+	@Test
+	public void slowTest() throws Exception {
+		Thread.sleep(10 * 60 * 1000);
 	}
 }
