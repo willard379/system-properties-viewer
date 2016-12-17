@@ -76,13 +76,13 @@ public class SystemPropertiesViewerTest {
 	public void test() {
 		// exercise SUT
 		List<String> actual = SystemPropertiesViewer.getAllSystemProperties();
-		
+
 		// verify outcome
 		assertThat(actual, is(not(empty())));
 	}
-	
+
 	@Test
 	public void slowTest() throws Exception {
-		Thread.sleep(10 * 60 * 1000);
+		Thread.sleep(2 * 60 * 1000);
 	}
 }
