@@ -12,17 +12,17 @@ java_library(
 )
 
 java_test(
-    name = "system-properties-viewer-test",
-    size = "small",
-    srcs = glob(["src/test/java/**/*.java",]),
-    test_class = "willard379.bazel.sample.AllTests",
-    deps = [
-        "system-properties-viewer-lib",
-        "commons_lang3",
-        "junit",
-        "hamcrest_all",
-        "takari_cpsuite",
-    ],
+	name = "system-properties-viewer-test",
+	size = "small",
+	srcs = glob(["src/test/java/**/*.java",]),
+	test_class = "willard379.bazel.sample.AllTests",
+	deps = [
+		"system-properties-viewer-lib",
+		"commons_lang3",
+		"junit",
+		"hamcrest_all",
+		"takari_cpsuite",
+	],
 )
 
 java_library(
