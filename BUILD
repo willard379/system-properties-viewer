@@ -5,6 +5,13 @@ java_binary(
 	deps = ["commons_lang3"],
 )
 
+java_test(
+	name = "system-properties-viewer",
+	srcs = glob(["src/test/java/**/*.java"]),
+	deps = ["commons_lang3"],
+	runtime_deps = ["junit", "hamcrest_all"], 
+)
+
 java_library(
 	name = "commons_lang3",
 	exports = ["@commons_lang3//jar"],
