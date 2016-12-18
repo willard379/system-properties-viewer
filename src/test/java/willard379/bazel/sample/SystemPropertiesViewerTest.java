@@ -83,6 +83,6 @@ public class SystemPropertiesViewerTest {
 
 	@Test
 	public void slowTest() throws Exception {
-		Thread.sleep(100 * 1000);
+		Thread.sleep(10 * 1_000);
 	}
 }
