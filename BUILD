@@ -25,6 +25,19 @@ java_test(
 	],
 )
 
+java_test(
+	name = "AllTests",
+	size = "small",
+	srcs = glob(["src/test/java/**/*.java",]),
+	deps = [
+		":system-properties-viewer-lib",
+		"@commons_lang3//jar",
+		"@junit//jar",
+		"@hamcrest_all//jar",
+		":takari_cpsuite",
+	],
+)
+
 java_import(
 	name = "takari_cpsuite",
 	jars = [
