@@ -16,6 +16,7 @@ public class SystemPropertiesViewer {
 			.entrySet()
 			.stream()
 			.map(e -> String.format("%s : %s", e.getKey(), StringEscapeUtils.escapeJava((String) e.getValue())))
-			.sorted().collect(Collectors.toList());
+			.sorted()
+			.collect(Collectors.toList());
 	}
 }
