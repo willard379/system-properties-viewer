@@ -2,13 +2,13 @@ java_binary(
 	name = "system-properties-viewer",
 	srcs = glob(["src/main/java/**/*.java",]),
 	main_class = "willard379.bazel.sample.SystemPropertiesViewer",
-	deps = ["commons_lang3",],
+	deps = ["@commons_lang3//jar",],
 )
 
 java_library(
 	name = "system-properties-viewer-lib",
 	srcs = glob(["src/main/java/**/*.java",]),
-	deps = ["commons_lang3"],
+	deps = ["@commons_lang3//jar"],
 )
 
 java_test(
@@ -17,39 +17,17 @@ java_test(
 	srcs = glob(["src/test/java/**/*.java",]),
 	test_class = "willard379.bazel.sample.AllTests",
 	deps = [
-		"system-properties-viewer-lib",
-		"commons_lang3",
+		":system-properties-viewer-lib",
+		"@commons_lang3//jar",
 		"@junit//jar",
 		"@hamcrest_all//jar",
-		"@takari_cpsuite//jar",
+		":takari_cpsuite",
 	],
 )
 
 java_import(
-	name = "libs_for_unittest",
-	jars = [
-		"@junit//jar",
-		"@hamcrest_all//jar",
-		"@takari_cpsuite//jar",
-	],
-)
-
-java_library(
-	name = "commons_lang3",
-	exports = ["@commons_lang3//jar",],
-)
-
-java_library(
-	name = "junit",
-	exports = ["@junit//jar",],
-)
-
-java_library(
-	name = "hamcrest_all",
-	exports = ["@hamcrest_all//jar",],
-)
-
-java_library(
 	name = "takari_cpsuite",
-	exports = ["@takari_cpsuite//jar",],
+	jars = [
+		"lib/takari-cpsuite-1.2.7.jar",
+	],
 )
