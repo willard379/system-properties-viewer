@@ -19,7 +19,9 @@ java_test(
 	deps = [
 		"system-properties-viewer-lib",
 		"commons_lang3",
-		"libs_for_unittest",
+		"@junit//jar",
+		"@hamcrest_all//jar",
+		"@takari_cpsuite//jar",
 	],
 )
 
